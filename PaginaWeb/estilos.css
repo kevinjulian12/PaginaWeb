@@ -1,0 +1,59 @@
+table{
+   
+    width: 40%;
+    line-height: 30px;
+    margin-left: 445px;
+    margin-top: 50px;
+    float: left;
+}
+.boton{
+    margin-left: 400px;
+}
+
+p{
+    font-size: 20px;
+    padding-top: 40px;
+    color: white;
+    text-align-last: center ;
+    padding-bottom: 10px;
+}
+body, .default {
+    line-height: 1.6em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 15px;
+    color:white;
+}
+.default{
+
+    color: black;
+}
+
+
+footer{
+    margin-top: 700px;
+   
+}
+.social{
+    text-align: center;
+}
+
+input:invalid {
+    border: 1px solid #CC0000;
+  }
+  
+  input:valid{
+    background-color: lightyellow;
+    border: 1px solid #3399FF;  
+  }
+  
+  input:valid+.invalid{
+    visibility: hidden;
+  }
+  
+  input:invalid+.invalid{
+    visibility: visible;
+  }
+
+  span{
+      color: darkred;
+  }
