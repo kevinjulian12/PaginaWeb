@@ -1,0 +1,76 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+
+
+
+#content {
+    float: center;
+    width: 100%;
+    background: rgba(26, 52, 100, 0.774);
+    min-height: 300px;
+    padding: 102px;
+}
+
+.SocialLogin {
+    background: darkgray;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    padding-bottom: 5px;
+}
+
+#container {
+    width: 40%;
+    margin: 0px auto;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 46px;
+}
+
+body {
+    
+    background-image: linear-gradient(120deg, rgba(132, 250, 175, 0.048) 0%, rgba(143, 210, 244, 0)100%), url(../images/267125bb5d2996966de68e3c213e36aa.jpg);
+}
+
+.article {
+    text-align: left;
+    color: rgb(255, 255, 255);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flexbox;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.boton {
+    text-align-last: center;
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*planilla CrearCuentaNueva*/
+.Titulo {
+    font-size: 20px;
+    padding-top: 40px;
+    color: white;
+    text-align-last: center;
+    padding-bottom: 10px;
+}
+
+.botonCuentaNueva {
+    
+    text-align-last: center;
+}
+
+.text {
+    color: white;
+}
+
+
+
+

@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<header><p class="Titulo">Registrar datos</p></header>
+
+<div id="content">
+    
+
+    <form name="form" asp-action="Index"
+          method="post" onsubmit="return validarForma(this);">
+
+        <dl class="row">
+            <ul class="list-unstyled">
+
+                <dt class="col-sm-3">
+                    <label class="text" for="usuario"> Usuario : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="text" class="form-control"
+                           name="usuario" autofocus placeholder="Escribir usuario" required="required" pattern="[a-zA-Z\s]{5,}" />
+
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="contraseña"> Contraseña : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="password" class="form-control" autofocus placeholder="Escribe tu contraseña" name="password" required="required">
+
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="nombre">  Nombre : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="text" class="form-control" autofocus placeholder="Escribe tu nombre" name="nombre" required="required" pattern="[a-zA-Z\s]{3,}" />
+
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="apellido">  Apellido : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="text" class="form-control" autofocus placeholder="Escribe tu apellido" name="apellido" required="required" pattern="[a-zA-Z\s]{5,}" />
+
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="email">  Email: </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="email" class="form-control" name="email" required placeholder="Escribe tu email" />
+
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="genero">  Genero : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <label class="text">Hombre</label>  <input type="radio" name="genero" value="H" required="required"> &nbsp;&nbsp;&nbsp;
+                    <label class="text">Mujer</label> <input type="radio" name="genero" value="M">
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label class="text" for="fecha de nacimiento">  Fecha de nacimiento :</label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="date" class="form-control" name="nacimiento" required="required" min="1900-01-01" max="3000-12-31" />
+                </dd>
+
+
+
+            </ul>
+        </dl>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" required="required" id="checkbox1" name="privacidad">
+            
+            <label class="text" for="checkbox1">
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" target="_blank">
+                    Aceptar terminos y condiciones de privacidad
+                </a>
+            </label>
+                
+        </div>
+
+        <div class="col-md-12">
+            <div class="botonCuentaNueva">
+                <button type="reset" class="btn btn-primary btn-lg">Borrar</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+            </div>
+        </div>
+    </form>
+
+    
+
+</div>
+<footer class="copyright">
+    <i class='bx bxs-copyright' undefined></i>Copyright2020
+</footer>
+
+

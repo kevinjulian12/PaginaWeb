@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div id="container">
+    <section id="content">
+        <article class="article">
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Ingrese su nombre de usuario o correo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="clave">Ingrese su contraseña:</label>
+                    <input type="password" class="form-control" id="clave" name="clave">
+                </div>
+                <a href="index.html">
+                    <p class="session">He olvidado mi contraseña</p>
+                </a>
+                <br>
+                <div class="boton">
+                    <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
+                    <br>
+                    <br>
+                    ¿no tienes una cuenta?
+                    <a asp-area="" asp-controller="Home" asp-action="CrearCuentaNueva">
+                        <p class="session">Crear cuenta nueva</p>
+                    </a>
+
+                </div>
+            </form>
+        </article>
+    </section>
+    
+    <p class="SocialLogin">
+        <i class='bx bxl-github'> </i> kevinjulian12
+
+    </p>
+</div>
+<footer class="copyright">
+    <i class='bx bxs-copyright' undefined></i>Copyright2020
+</footer>
+
+
