@@ -1,0 +1,104 @@
+﻿@model CRM_web.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header><p class="Titulo">Registrar datos</p></header>
+
+<div id="content">
+    
+    <form asp-action="Create" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <dl class="row">
+            <ul class="list-unstyled">
+                <dt class="col-sm-3">
+                    <label asp-for="Usuario_" class="text">Usuario :</label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Usuario_"  class="form-control" autofocus placeholder="Escribir usuario" required="required" pattern="[a-zA-Z\s]{5,}" />
+                    <span asp-validation-for="Usuario_" class="text-danger"></span>
+                </dd>
+                <dt class="col-sm-3">
+                    <label asp-for="Contraseña" class="text" for="contraseña"> Contraseña : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Contraseña" type="password" class="form-control" autofocus placeholder="Escribe tu contraseña" required="required">
+                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                </dd>
+                <dt class="col-sm-3">
+                    <label asp-for="Nombre" class="text" for="nombre">  Nombre : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Nombre" type="text" class="form-control" autofocus placeholder="Escribe tu nombre"  required="required" pattern="[a-zA-Z\s]{3,}" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label asp-for="Apellido" class="text" for="apellido">  Apellido : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Apellido" type="text" class="form-control" autofocus placeholder="Escribe tu apellido"  required="required" pattern="[a-zA-Z\s]{5,}" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label asp-for="Email" class="text" for="email">  Email: </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Email" type="email" class="form-control"  required placeholder="Escribe tu email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label asp-for="Genero"  class="text" for="genero">  Genero : </label>
+                </dt>
+                <dd class="col-sm-9">
+                    <label class="text">Hombre</label>  <input asp-for="Genero" type="radio"  value="M" required="required"> &nbsp;&nbsp;&nbsp;
+                    <label class="text">Mujer</label> <input asp-for="Genero" type="radio"  value="F">
+                    <span asp-validation-for="Genero" class="text-danger"></span>
+                </dd>
+
+                <dt class="col-sm-3">
+                    <label asp-for="Fecha_de_nacimiento" class="text" for="fecha de nacimiento">  Fecha de nacimiento :</label>
+                </dt>
+                <dd class="col-sm-9">
+                    <input asp-for="Fecha_de_nacimiento" type="date" class="form-control"  required="required" min="1900-01-01" max="3000-12-31" />
+                    <span asp-validation-for="Fecha_de_nacimiento" class="text-danger"></span>
+                </dd>
+
+            </ul>
+        </dl>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"  required="required" id="checkbox1" name="privacidad">
+
+            <label class="text" for="checkbox1">
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" target="_blank">
+                    Aceptar terminos y condiciones de privacidad
+                </a>
+            </label>
+            
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="botonCuentaNueva">
+                <button type="reset" class="btn btn-primary btn-lg">Borrar</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<footer class="copyright">
+    <i class='bx bxs-copyright' undefined></i>Copyright2020
+</footer>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

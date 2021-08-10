@@ -16,7 +16,7 @@
                     <label for="clave">Ingrese su contraseña:</label>
                     <input type="password" class="form-control" id="clave" name="clave">
                 </div>
-                <a href="index.html">
+                <a asp-area="" asp-controller="Usuarios" asp-action="Create">
                     <p class="session">He olvidado mi contraseña</p>
                 </a>
                 <br>
@@ -25,7 +25,7 @@
                     <br>
                     <br>
                     ¿no tienes una cuenta?
-                    <a asp-area="" asp-controller="Home" asp-action="CrearCuentaNueva">
+                    <a asp-area="" asp-controller="Usuarios" asp-action="Create">
                         <p class="session">Crear cuenta nueva</p>
                     </a>
 

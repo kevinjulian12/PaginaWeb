@@ -13,7 +13,17 @@ namespace CRM_web.Models
 
         [Required]
         [MaxLength (20)]
-        [Display(Name ="nombre")]
+        [Display(Name ="usuario")]
+        public string Usuario_ { get; set; }
+
+        [Required]
+        [MaxLength(20)]
+        [Display(Name = "contraseña")]
+        public string Contraseña { get; set; }
+
+        [Required]
+        [MaxLength(20)]
+        [Display(Name = "nombre")]
         public string Nombre { get; set; }
 
         [Required]
@@ -25,6 +35,15 @@ namespace CRM_web.Models
         [MaxLength(40)]
         [Display(Name = "email")]
         public string Email { get; set; }
+
+        [Required]
+        [MaxLength(40)]
+        [Display(Name = "genero")]
+        public string Genero { get; set; }
+
+        [Required]
+        [Display(Name = "fecha_de_nacimiento")]
+        public  DateTime Fecha_de_nacimiento { get; set; }
 
     }
 }

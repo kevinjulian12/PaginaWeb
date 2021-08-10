@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRM_web.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace CRM_web.Data
         {
 
         }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
