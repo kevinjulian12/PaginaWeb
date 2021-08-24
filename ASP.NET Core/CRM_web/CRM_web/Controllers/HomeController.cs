@@ -31,23 +31,32 @@ namespace CRM_web.Controllers
         public async Task<ActionResult> Index(Usuario usuario)
         {
             var US = _context.Usuarios.Where(X => X.Usuario_ == usuario.Usuario_).ToList();
-            if (US.Count == 0)
+            var Email = _context.Usuarios.Where(X=>X.Email == usuario.Usuario_).ToList();
+            if (US.Count == 0 && Email.Count == 0)
             {
-                
-            }
-            var con = US.Where(x => x.Contraseña == usuario.Contraseña).ToList();
-
-            if (con.Count > 0)
-            {
-                int ID = con.Select(x => x.id).Single();
-               // await MenuPrincipal(id);
-                return RedirectToAction("MenuPrincipal",new{ id = ID});
+                ViewData["Message"] = "el usuario ingresado o email, es incorrecto";
+                return View();
             }
             else
             {
-                return Content(string.Format("No Hay Datos Asociados"));
+                var con = US.Where(x => x.Contraseña == usuario.Contraseña).ToList();
+                var cont = Email.Where(x => x.Contraseña == usuario.Contraseña).ToList();
+                if (con.Count == 1 )
+                {
+                    int ID = con.Select(x => x.id).Single();
+                    return RedirectToAction("MenuPrincipal", new { id = ID });     
+                }
+                if (cont.Count == 1)
+                {
+                    int IDC = cont.Select(x => x.id).Single();
+                    return RedirectToAction("MenuPrincipal", new { id = IDC });
+                }
+                else
+                {
+                    ViewData["Message2"] = "contraseña incorrecta";
+                    return View();
+                }
             }
-            
         }
 
 
