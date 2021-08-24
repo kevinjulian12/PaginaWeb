@@ -1,9 +1,9 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-
+@model CRM_web.Models.Usuario
 <header><p class="Titulo">Registrar datos</p></header>
-
+<h3>@ViewData["Message"]</h3>
 <div id="content">
     
 
@@ -75,13 +75,13 @@
         </dl>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" required="required" id="checkbox1" name="privacidad">
-            
+
             <label class="text" for="checkbox1">
                 <a asp-area="" asp-controller="Home" asp-action="Privacy" target="_blank">
                     Aceptar terminos y condiciones de privacidad
                 </a>
             </label>
-                
+
         </div>
 
         <div class="col-md-12">
@@ -92,7 +92,7 @@
         </div>
     </form>
 
-    
+
 
 </div>
 <footer class="copyright">

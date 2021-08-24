@@ -100,3 +100,27 @@ body {
         padding-top: 6px;
     }
 }
+input:invalid {
+    border: 1px solid #CC0000;
+}
+
+input:valid {
+    background-color: lightyellow;
+    border: 1px solid #3399FF;
+}
+
+    input:valid + .invalid {
+        visibility: hidden;
+    }
+
+input:invalid + .invalid {
+    visibility: visible;
+}
+
+span {
+    color: salmon;
+}
+
+.Terminos{
+    text-align-last:left;
+}

@@ -149,5 +149,8 @@ namespace CRM_web.Controllers
         {
             return _context.Usuarios.Any(e => e.id == id);
         }
+
+
+      
     }
 }

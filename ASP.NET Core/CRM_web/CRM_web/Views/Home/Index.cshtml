@@ -1,27 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model CRM_web.Models.Usuario
 
 
 <div id="container">
     <section id="content">
         <article class="article">
-            <form>
+            <form asp-action="Index" >
                 <div class="form-group">
-                    <label for="nombre">Ingrese su nombre de usuario o correo:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre">
+                    <label asp-for="Usuario_">Ingrese su nombre de usuario o correo:</label>
+                    <input type="text" asp-for="Usuario_" class="form-control" >
                 </div>
                 <div class="form-group">
-                    <label for="clave">Ingrese su contraseña:</label>
-                    <input type="password" class="form-control" id="clave" name="clave">
+                    <label asp-for="Contraseña">Ingrese su contraseña:</label>
+                    <input type="password" asp-for="Contraseña" class="form-control" >
                 </div>
                 <a asp-area="" asp-controller="Usuarios" asp-action="Create">
                     <p class="session">He olvidado mi contraseña</p>
                 </a>
                 <br>
                 <div class="boton">
-                    <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
+                    <button type="submit" name="btn-signup" class="btn btn-primary btn-lg">Iniciar Sesión</button>
                     <br>
                     <br>
                     ¿no tienes una cuenta?
@@ -33,7 +33,7 @@
             </form>
         </article>
     </section>
-    
+
     <p class="SocialLogin">
         <i class='bx bxl-github'> </i> kevinjulian12
 
