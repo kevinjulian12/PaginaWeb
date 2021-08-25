@@ -35,7 +35,7 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input asp-for="Email" type="email" class="form-control" required placeholder="Escribe tu email" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <span asp-validation-for="Email" class="text-danger">@ViewData["Message2"]</span>
                 </dd>
 
                 <dt class="col-sm-3">
@@ -59,7 +59,7 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input asp-for="Usuario_" class="form-control" required="required"  placeholder="Escribir usuario" pattern="[a-zA-Z\s]{5,}" />
-                    <span asp-validation-for="Usuario_" class="text-danger"></span>
+                    <span asp-validation-for="Usuario_" class="text-danger">@ViewData["Message"]</span>
                 </dd>
                 <dt class="col-sm-3">
                     <label asp-for="Contraseña" class="text" for="contraseña"> Contraseña : </label>
@@ -75,16 +75,13 @@
             
            <div class="Terminos">
                <label class="text" for="checkbox1">
-                   <input class="form-check-input" type="checkbox" required="required" id="checkbox1" name="privacidad">
-
-                   <span class="invalid"></span>
+                   <input  class="form-check-input" type="checkbox" required="required" id="checkbox1" name="privacidad">
+                   <span  class="invalid"></span>
                    <a asp-area="" asp-controller="Home" asp-action="Privacy" target="_blank">
                        Aceptar terminos y condiciones de privacidad
                    </a>
-
                </label>
             </div>
-
         </div>
 
         <div class="col-md-12">

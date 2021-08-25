@@ -56,11 +56,30 @@ namespace CRM_web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,Usuario_,Contraseña,Nombre,Apellido,Email,Genero,Fecha_de_nacimiento")] Usuario usuario)
         {
+          
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var US = _context.Usuarios.Where(X => X.Usuario_ == usuario.Usuario_).ToList();
+                var Email = _context.Usuarios.Where(X => X.Email == usuario.Email).ToList();
+                if (US.Count > 0)
+                {
+                    ViewData["Message"] = "El nombre de usuario ya se encuentra en uso, ingrese otro por favor";
+                    return View(usuario);
+                }
+                else
+                {
+                    if (Email.Count > 0)
+                    {
+                        ViewData["Message2"] = "El email ya se encuentra registrado";
+                        return View(usuario);
+                    }
+                    else
+                    {
+                        _context.Add(usuario);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
             }
             return View(usuario);
         }
