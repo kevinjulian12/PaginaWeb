@@ -43,12 +43,12 @@ namespace CRM_web.Controllers
                 var cont = Email.Where(x => x.Contraseña == usuario.Contraseña).ToList();
                 if (con.Count == 1 )
                 {
-                    int ID = con.Select(x => x.id).Single();
+                    int ID = con.Select(x => x.UserID).Single();
                     return RedirectToAction("MenuPrincipal", new { id = ID });     
                 }
                 if (cont.Count == 1)
                 {
-                    int IDC = cont.Select(x => x.id).Single();
+                    int IDC = cont.Select(x => x.UserID).Single();
                     return RedirectToAction("MenuPrincipal", new { id = IDC });
                 }
                 else
@@ -69,7 +69,7 @@ namespace CRM_web.Controllers
         public async Task<IActionResult> MenuPrincipal(int id)
         {
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.UserID == id);
             var usu = usuario.Usuario_;
             var mj = "Hola " + usu;
             ViewData["Message"] =mj;

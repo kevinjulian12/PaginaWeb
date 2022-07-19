@@ -34,7 +34,7 @@ namespace CRM_web.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.UserID == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -107,7 +107,7 @@ namespace CRM_web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,Usuario_,Contraseña,Nombre,Apellido,Email,Genero,Fecha_de_nacimiento")] Usuario usuario)
         {
-            if (id != usuario.id)
+            if (id != usuario.UserID)
             {
                 return NotFound();
             }
@@ -121,7 +121,7 @@ namespace CRM_web.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.id))
+                    if (!UsuarioExists(usuario.UserID))
                     {
                         return NotFound();
                     }
@@ -144,7 +144,7 @@ namespace CRM_web.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.UserID == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -166,7 +166,7 @@ namespace CRM_web.Controllers
 
         private bool UsuarioExists(int id)
         {
-            return _context.Usuarios.Any(e => e.id == id);
+            return _context.Usuarios.Any(e => e.UserID == id);
         }
 
 
