@@ -1,4 +1,4 @@
-﻿@model CRM_web.Models.Usuario
+﻿@model CRM_web.Models.Users
 
 @{
     ViewData["Title"] = "Crear una nueva cuenta";
@@ -15,19 +15,19 @@
             <ul class="list-unstyled">
                 
                 <dt class="col-sm-3">
-                    <label asp-for="Nombre" class="text" for="nombre">  Nombre : </label>
+                    <label asp-for="FirstName" class="text" for="nombre">  Nombre : </label>
                 </dt>
                 <dd class="col-sm-9">
-                    <input asp-for="Nombre" type="text" class="form-control"  placeholder= "Escribe tu nombre"  required="required" pattern="[a-zA-Z\s]{3,}" />
-                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                    <input asp-for="FirstName" type="text" class="form-control"  placeholder= "Escribe tu nombre"  required="required" pattern="[a-zA-Z\s]{3,}" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </dd>
 
                 <dt class="col-sm-3">
-                    <label asp-for="Apellido" class="text" for="apellido">  Apellido : </label>
+                    <label asp-for="LastName" class="text" for="apellido">  Apellido : </label>
                 </dt>
                 <dd class="col-sm-9">
-                    <input asp-for="Apellido" type="text" class="form-control"  placeholder="Escribe tu apellido" required="required" pattern="[a-zA-Z\s]{5,}" />
-                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                    <input asp-for="LastName" type="text" class="form-control"  placeholder="Escribe tu apellido" required="required" pattern="[a-zA-Z\s]{5,}" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </dd>
 
                 <dt class="col-sm-3">
@@ -39,34 +39,34 @@
                 </dd>
 
                 <dt class="col-sm-3">
-                    <label asp-for="Genero" class="text" for="genero">  Genero : </label>
+                    <label asp-for="GENDER" class="text" for="genero">  Genero : </label>
                 </dt>
                 <dd class="col-sm-9">
-                    <label class="text">Hombre</label>  <input asp-for="Genero" type="radio" value="M" required="required"> &nbsp;&nbsp;&nbsp;
-                    <label class="text">Mujer</label> <input asp-for="Genero" type="radio" value="F">
-                    <span asp-validation-for="Genero" class="text-danger"></span>
+                    <label class="text">Hombre</label>  <input asp-for="GENDER" type="radio" value="M" required="required"> &nbsp;&nbsp;&nbsp;
+                    <label class="text">Mujer</label> <input asp-for="GENDER" type="radio" value="F">
+                    <span asp-validation-for="GENDER" class="text-danger"></span>
                 </dd>
 
                 <dt class="col-sm-3">
-                    <label asp-for="Fecha_de_nacimiento" class="text" for="fecha de nacimiento">  Fecha de nacimiento :</label>
+                    <label asp-for="DateoOfBirth" class="text" for="fecha de nacimiento">  Fecha de nacimiento :</label>
                 </dt>
                 <dd class="col-sm-9">
-                    <input asp-for="Fecha_de_nacimiento" type="date" class="form-control" required="required" min="1900-01-01" max="3000-12-31" />
-                    <span asp-validation-for="Fecha_de_nacimiento" class="text-danger"></span>
+                    <input asp-for="DateoOfBirth" type="date" class="form-control" required="required" min="1900-01-01" max="3000-12-31" />
+                    <span asp-validation-for="DateoOfBirth" class="text-danger"></span>
                 </dd>
                 <dt class="col-sm-3">
-                    <label asp-for="Usuario_" class="text">Usuario :</label>
+                    <label asp-for="LoginName" class="text">Usuario :</label>
                 </dt>
                 <dd class="col-sm-9">
-                    <input asp-for="Usuario_" class="form-control" required="required"  placeholder="Escribir usuario" pattern="[a-zA-Z\s]{5,}" />
-                    <span asp-validation-for="Usuario_" class="text-danger">@ViewData["Message"]</span>
+                    <input asp-for="LoginName" class="form-control" required="required"  placeholder="Escribir usuario" pattern="[a-zA-Z\s]{5,}" />
+                    <span asp-validation-for="LoginName" class="text-danger">@ViewData["Message"]</span>
                 </dd>
                 <dt class="col-sm-3">
-                    <label asp-for="Contraseña" class="text" for="contraseña"> Contraseña : </label>
+                    <label asp-for="Password" class="text" for="contraseña"> Contraseña : </label>
                 </dt>
                 <dd class="col-sm-9">
-                    <input asp-for="Contraseña" type="password" class="form-control"  placeholder="Escribe tu contraseña" required="required">
-                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    <input asp-for="Password" type="password" class="form-control"  placeholder="Escribe tu contraseña" required="required">
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </dd>
 
             </ul>
@@ -94,8 +94,8 @@
     
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div >
+    <a target="_blank" asp-controller="Home" asp-action="Index">Volver</a>
 </div>
 <footer class="copyright">
     <i class='bx bxs-copyright' undefined></i>Copyright2020

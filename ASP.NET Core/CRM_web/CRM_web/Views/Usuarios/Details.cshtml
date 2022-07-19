@@ -1,4 +1,4 @@
-﻿@model CRM_web.Models.Usuario
+﻿@model CRM_web.Models.Users
 
 @{
     ViewData["Title"] = "Details";
@@ -12,28 +12,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Usuario_)
+            @Html.DisplayNameFor(model => model.LoginName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Usuario_)
+            @Html.DisplayFor(model => model.LoginName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Contraseña)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Contraseña)
+            @Html.DisplayFor(model => model.Password)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.FirstName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Nombre)
+            @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
+            @Html.DisplayNameFor(model => model.LastName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Apellido)
+            @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Email)
@@ -42,16 +42,16 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Genero)
+            @Html.DisplayNameFor(model => model.GENDER)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Genero)
+            @Html.DisplayFor(model => model.GENDER)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Fecha_de_nacimiento)
+            @Html.DisplayNameFor(model => model.DateoOfBirth)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Fecha_de_nacimiento)
+            @Html.DisplayFor(model => model.DateoOfBirth)
         </dd>
     </dl>
 </div>

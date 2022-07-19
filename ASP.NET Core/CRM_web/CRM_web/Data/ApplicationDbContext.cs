@@ -14,6 +14,6 @@ namespace CRM_web.Data
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Users> Users { get; set; }
     }
 }

@@ -19,17 +19,17 @@ namespace CRM_web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CRM_web.Models.Usuario", b =>
+            modelBuilder.Entity("CRM_web.Models.Users", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Apellido")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(20);
 
-                    b.Property<string>("Contraseña")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(20);
 
@@ -37,23 +37,23 @@ namespace CRM_web.Migrations
                         .IsRequired()
                         .HasMaxLength(40);
 
-                    b.Property<DateTime>("Fecha_de_nacimiento");
+                    b.Property<DateTime>("DateoOfBirth");
 
-                    b.Property<string>("Genero")
+                    b.Property<string>("GENDER")
                         .IsRequired()
                         .HasMaxLength(40);
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(20);
 
-                    b.Property<string>("Usuario_")
+                    b.Property<string>("LoginName")
                         .IsRequired()
                         .HasMaxLength(20);
 
-                    b.HasKey("id");
+                    b.HasKey("UserID");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

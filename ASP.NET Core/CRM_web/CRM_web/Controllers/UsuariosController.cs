@@ -22,7 +22,7 @@ namespace CRM_web.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuarios.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
@@ -33,7 +33,7 @@ namespace CRM_web.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
+            var usuario = await _context.Users
                 .FirstOrDefaultAsync(m => m.UserID == id);
             if (usuario == null)
             {
@@ -54,13 +54,14 @@ namespace CRM_web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,Usuario_,Contraseña,Nombre,Apellido,Email,Genero,Fecha_de_nacimiento")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("UserID,LoginName,Password,FirstName,LastName,Email,GENDER,DateoOfBirth")] Users usuario)
+        
         {
           
             if (ModelState.IsValid)
             {
-                var US = _context.Usuarios.Where(X => X.Usuario_ == usuario.Usuario_).ToList();
-                var Email = _context.Usuarios.Where(X => X.Email == usuario.Email).ToList();
+                var US = _context.Users.Where(X => X.LoginName == usuario.LoginName).ToList();
+                var Email = _context.Users.Where(X => X.Email == usuario.Email).ToList();
                 if (US.Count > 0)
                 {
                     ViewData["Message"] = "El nombre de usuario ya se encuentra en uso, ingrese otro por favor";
@@ -92,7 +93,7 @@ namespace CRM_web.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _context.Users.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound();
@@ -105,7 +106,7 @@ namespace CRM_web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Usuario_,Contraseña,Nombre,Apellido,Email,Genero,Fecha_de_nacimiento")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID,LoginName,Password,FirstName,LastName,Email,GENDER,DateoOfBirth")] Users usuario)
         {
             if (id != usuario.UserID)
             {
@@ -143,7 +144,7 @@ namespace CRM_web.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
+            var usuario = await _context.Users
                 .FirstOrDefaultAsync(m => m.UserID == id);
             if (usuario == null)
             {
@@ -158,15 +159,15 @@ namespace CRM_web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-            _context.Usuarios.Remove(usuario);
+            var usuario = await _context.Users.FindAsync(id);
+            _context.Users.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UsuarioExists(int id)
         {
-            return _context.Usuarios.Any(e => e.UserID == id);
+            return _context.Users.Any(e => e.UserID == id);
         }
 
 

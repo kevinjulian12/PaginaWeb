@@ -9,29 +9,29 @@ namespace CRM_web.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "Users",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    UserID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Usuario_ = table.Column<string>(maxLength: 20, nullable: false),
-                    Contraseña = table.Column<string>(maxLength: 20, nullable: false),
-                    Nombre = table.Column<string>(maxLength: 20, nullable: false),
-                    Apellido = table.Column<string>(maxLength: 20, nullable: false),
+                    LoginName_ = table.Column<string>(maxLength: 20, nullable: false),
+                    Password = table.Column<string>(maxLength: 20, nullable: false),
+                    FirstName = table.Column<string>(maxLength: 20, nullable: false),
+                    LastName = table.Column<string>(maxLength: 20, nullable: false),
                     Email = table.Column<string>(maxLength: 40, nullable: false),
-                    Genero = table.Column<string>(maxLength: 40, nullable: false),
-                    Fecha_de_nacimiento = table.Column<DateTime>(nullable: false)
+                    GENDER = table.Column<string>(maxLength: 40, nullable: false),
+                    DateoOfBirth = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.id);
+                    table.PrimaryKey("PK_Usuarios", x => x.UserID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Users");
         }
     }
 }

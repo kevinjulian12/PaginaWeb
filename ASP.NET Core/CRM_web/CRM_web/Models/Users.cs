@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM_web.Models
 {
-    public class Usuario
+    public class Users
     {
     [Key]
     public int UserID{ get; set; }

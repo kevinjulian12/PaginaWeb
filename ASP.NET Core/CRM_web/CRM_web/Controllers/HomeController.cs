@@ -28,10 +28,10 @@ namespace CRM_web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Index(Usuario usuario)
+        public async Task<ActionResult> Index(Users usuario)
         {
-            var US = _context.Usuarios.Where(X => X.Usuario_ == usuario.Usuario_).ToList();
-            var Email = _context.Usuarios.Where(X=>X.Email == usuario.Usuario_).ToList();
+            var US = _context.Users.Where(X => X.LoginName == usuario.LoginName).ToList();
+            var Email = _context.Users.Where(X=>X.Email == usuario.LoginName).ToList();
             if (US.Count == 0 && Email.Count == 0)
             {
                 ViewData["Message"] = "el usuario ingresado o email, es incorrecto";
@@ -39,8 +39,8 @@ namespace CRM_web.Controllers
             }
             else
             {
-                var con = US.Where(x => x.Contraseña == usuario.Contraseña).ToList();
-                var cont = Email.Where(x => x.Contraseña == usuario.Contraseña).ToList();
+                var con = US.Where(x => x.Password == usuario.Password).ToList();
+                var cont = Email.Where(x => x.Password == usuario.Password).ToList();
                 if (con.Count == 1 )
                 {
                     int ID = con.Select(x => x.UserID).Single();
@@ -63,14 +63,14 @@ namespace CRM_web.Controllers
 
         private bool UsuarioExists(string usuario, string contraseña)
         {
-            return _context.Usuarios.Any(e => e.Usuario_ == usuario);
+            return _context.Users.Any(e => e.LoginName == usuario);
         }
 
         public async Task<IActionResult> MenuPrincipal(int id)
         {
-            var usuario = await _context.Usuarios
+            var usuario = await _context.Users
                 .FirstOrDefaultAsync(m => m.UserID == id);
-            var usu = usuario.Usuario_;
+            var usu = usuario.LoginName;
             var mj = "Hola " + usu;
             ViewData["Message"] =mj;
 

@@ -1,38 +1,43 @@
-﻿@model IEnumerable<CRM_web.Models.Usuario>
+﻿@model IEnumerable<CRM_web.Models.Users>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Lista de Usuarios</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Usuario</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Usuario_)
+                Usuario
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Contraseña)
+                @Html.DisplayNameFor(model => model.Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                Nombre
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apellido)
+                Apellido
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+               Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genero)
+                Genero
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fecha_de_nacimiento)
+                Fecha de nacimiento
+                
             </th>
             <th></th>
         </tr>
@@ -41,30 +46,30 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Usuario_)
+                @Html.DisplayFor(modelItem => item.LoginName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Contraseña)
+                @Html.DisplayFor(modelItem => item.Password)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
+                @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genero)
+                @Html.DisplayFor(modelItem => item.GENDER)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fecha_de_nacimiento)
+                @Html.DisplayFor(modelItem => item.DateoOfBirth)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.UserID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.UserID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.UserID">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.UserID">Eliminar</a>
             </td>
         </tr>
 }
